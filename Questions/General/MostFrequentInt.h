@@ -32,6 +32,5 @@
 			mostCount = currentCount;
 		}
 	}
-
 	return most;
 }

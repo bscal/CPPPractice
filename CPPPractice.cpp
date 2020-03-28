@@ -2,17 +2,24 @@
 //
 
 #include <iostream>
-#include <array>
+#include <cassert>
 
 #include "Questions/General/MostFrequentInt.h"
+#include "Questions/General/Question2.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
 
-    int arr[] = { 1, 7, 5, 5, 7, 9, 5, 7, 7 };
-    int q0 = MostFrequentInt(arr, 9);
-    std::clog << q0;
+    int arr[] = { 1, 7, 5, 5, 7, 9, 5, 7, 7 }; 
+    int q0 = MostFrequentInt(arr, 9); // 7
+    std::clog << q0 << std::endl;
+    assert(q0 == 7);
+
+    int arr2[] = { 7, 5, 9, 3, 6, 5, 3, 7, 1 };
+    auto q1 = FindInt(arr2, 9); // 4
+    std::clog << q1.size() << std::endl;
+    assert(q1.size() == 4);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
