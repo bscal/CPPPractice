@@ -6,20 +6,33 @@
 
 #include "Questions/General/MostFrequentInt.h"
 #include "Questions/General/Question2.h"
+#include "Questions/General/Question3.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
 
     int arr[] = { 1, 7, 5, 5, 7, 9, 5, 7, 7 }; 
-    int q0 = MostFrequentInt(arr, 9); // 7
-    std::clog << q0 << std::endl;
-    assert(q0 == 7);
+    int q1 = MostFrequentInt(arr, 9); // 7
+    std::clog << q1 << std::endl;
+    assert(q1 == 7);
 
     int arr2[] = { 7, 5, 9, 3, 6, 5, 3, 7, 1 };
-    auto q1 = FindInt(arr2, 9); // 4
-    std::clog << q1.size() << std::endl;
-    assert(q1.size() == 4);
+    auto q2 = FindInt(arr2, 9, 10); // 4
+    std::clog << q2.size() << std::endl;
+    assert(q2.size() == 4);
+
+    bool q3 = IsRotated(std::array<int, 7>({ 1,2,3,5,6,7,8 }), std::array<int, 7>({ 5,6,7,8,1,2,3 }));
+    std::clog << q3 << std::endl; // Is
+    assert(q3);
+
+	bool q3a = IsRotated(std::array<int, 7>({ 1,2,3,5,6,7,8 }), std::array<int, 7>({ 3,5,6,1,2,7,8 }));
+	std::clog << q3a << std::endl; // Is not
+    assert(!q3a);
+
+	bool q3b = IsRotated(std::array<int, 5>({ 0, 0, 1, 2, 0 }), std::array<int, 5>({ 0, 0, 0, 1, 2 }));
+	std::clog << q3b << std::endl; // Is
+    assert(q3b);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

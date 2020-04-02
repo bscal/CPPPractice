@@ -2,13 +2,16 @@
 
 #include <map>
 
+// Question 1
 // Find the most frequent integer in an array
+//
+// O(n)
 [[nodiscard]] int const MostFrequentInt(const int* arr, const int& size)
 {
 	std::map<int, int> counts = {};
 	int most = 0;
 	int mostCount = 0;
-
+	
 	for (int i = 0; i < size; i++)
 	{
 		int current = arr[i];

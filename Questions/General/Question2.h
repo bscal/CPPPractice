@@ -18,11 +18,10 @@ struct PairInt
 	}
 };
 
-[[nodiscard]] std::vector<PairInt> FindInt(const int* arr, const int& size)
+[[nodiscard]] std::vector<PairInt> FindInt(const int* arr, const int& size, const int& value)
 {
 	std::vector<PairInt> results = {};
 	std::map<int, int> values = {};
-	//std::set<int> values = {};
 
 	for (int i = 0; i < size; i++)
 	{
@@ -31,16 +30,15 @@ struct PairInt
 			values[num] = values[num]++;
 		else
 			values.emplace(num, 1);
-	}
 
-	for (int i = 0; i < size; i++)
-	{
-		int numNeeded = 10 - arr[i];
-		if (values[arr[i]] > 0 && values[numNeeded] > 0)
+		// I initially did 2 for loops but you can
+		// just use 1 after inserting the value
+		int numNeeded = value - num;
+		if (values[num] > 0 && values[numNeeded] > 0)
 		{
-			values[arr[i]] = values[arr[i]]--;
+			values[num] = values[num]--;
 			values[numNeeded] = values[numNeeded]--;
-			results.emplace_back(PairInt({ arr[i] , numNeeded }));
+			results.emplace_back(PairInt({ num , numNeeded }));
 		}
 	}
 	return results;
