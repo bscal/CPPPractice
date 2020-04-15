@@ -7,6 +7,8 @@
 #include "Questions/General/MostFrequentInt.h"
 #include "Questions/General/Question2.h"
 #include "Questions/General/Question3.h"
+#include "Questions/General/Question4.h"
+#include "Questions/General/Question5.h"
 
 int main()
 {
@@ -33,6 +35,12 @@ int main()
 	bool q3b = IsRotated(std::array<int, 5>({ 0, 0, 1, 2, 0 }), std::array<int, 5>({ 0, 0, 0, 1, 2 }));
 	std::clog << q3b << std::endl; // Is
     assert(q3b);
+
+    Fibonaccis::Start(10);
+
+    int q5 = ArrayOnce(std::array<int, 7>({ 2, 2, 2, 1, 3, 3, 3}));
+	std::clog << q5 << std::endl; // Is
+	assert(q5 == 1);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

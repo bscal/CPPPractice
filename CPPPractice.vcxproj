@@ -153,6 +153,8 @@
     <ClInclude Include="Questions\General\MostFrequentInt.h" />
     <ClInclude Include="Questions\General\Question2.h" />
     <ClInclude Include="Questions\General\Question3.h" />
+    <ClInclude Include="Questions\General\Question4.h" />
+    <ClInclude Include="Questions\General\Question5.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
